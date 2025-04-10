@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             if (response.ok) {
+                form.reset();
                 // 发送自动回复邮件
                 // await sendAutoReply(formData.get('email'));
                 

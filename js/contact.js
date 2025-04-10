@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         try {
             const formData = new FormData(form);
-            const response = await fetch('https://formsubmit.co/jasonchenjy@gmail.com', {
+            const response = await fetch('https://formsubmit.co/5d0e35dcdae5f10160d90029b39c1c8b', {
                 method: 'POST',
                 body: formData,
                 headers: {
