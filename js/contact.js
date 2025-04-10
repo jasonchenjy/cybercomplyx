@@ -10,23 +10,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
         try {
             const formData = new FormData(form);
-            const templateParams = {
-                to_email: 'contact@cybercomply.com',
-                from_name: formData.get('name'),
-                from_email: formData.get('email'),
-                subject: formData.get('subject'),
-                message: formData.get('message'),
-                phone: formData.get('phone') || '未提供'
-            };
-
-            // 使用 EmailJS 发送邮件
-            await emailjs.send(
-                'YOUR_SERVICE_ID',
-                'YOUR_TEMPLATE_ID',
-                templateParams
-            );
-
+            const response = await fetch('https://formsubmit.co/jasonchenjy@gmail.com', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    "Accept": "application/json"
+                }
+            });
             alert('消息已发送，我们会尽快回复您！');
+
             form.reset();
             
         } catch (error) {

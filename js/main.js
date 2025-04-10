@@ -1,4 +1,28 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // 简单的路由器类定义
+    class Router {
+        constructor(routes) {
+            this.routes = routes;
+            this.initRouter();
+        }
+        
+        initRouter() {
+            // 获取当前页面路径
+            const path = window.location.pathname;
+            const currentPage = path.split('/').pop().split('.')[0] || 'index';
+            
+            // 高亮当前页面的导航链接
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                const linkPage = link.getAttribute('href').split('/').pop().split('.')[0];
+                if (linkPage === currentPage || (currentPage === 'index' && linkPage === 'home')) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+    }
+    
     // 初始化路由
     const router = new Router(['home', 'services', 'process', 'assessment', 'about', 'contact']);
     
@@ -38,7 +62,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const langSwitch = document.querySelector('.language-switch');
     if (langSwitch) {
         langSwitch.addEventListener('click', function(e) {
-            e.preventDefault();
+            console.log('语言切换按钮被点击');
+            // e.preventDefault();
             // 这里添加语言切换逻辑
             this.textContent = this.textContent === 'EN' ? 'CN' : 'EN';
         });
@@ -97,12 +122,56 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    document.addEventListener('DOMContentLoaded', function() {
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-    
-        menuToggle.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
+    // 移动端菜单处理
+    const initMobileMenu = function() {
+        console.log('初始化移动菜单');
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileNav = document.getElementById('mobile-nav');
+        const navLinks = document.getElementById('mobile-nav-links');
+        const menuIcon = document.getElementById('menu-icon');
+        
+        console.log('菜单元素:', { menuToggle, mobileNav, navLinks, menuIcon });
+        
+        if (!menuToggle || !mobileNav || !navLinks || !menuIcon) {
+            console.error('未找到移动菜单元素:', { menuToggle, mobileNav, navLinks, menuIcon });
+            return;
+        }
+        
+        menuToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('菜单按钮被点击');
+            console.log('点击前状态:', { 
+                mobileNavActive: mobileNav.classList.contains('active'),
+                navLinksShow: navLinks.classList.contains('show'),
+                menuIconBars: menuIcon.classList.contains('fa-bars'),
+                menuIconTimes: menuIcon.classList.contains('fa-times')
+            });
+            
+            mobileNav.classList.toggle('active');
+            navLinks.classList.toggle('show');
+            menuIcon.classList.toggle('fa-bars');
+            menuIcon.classList.toggle('fa-times');
+            
+            console.log('点击后状态:', { 
+                mobileNavActive: mobileNav.classList.contains('active'),
+                navLinksShow: navLinks.classList.contains('show'),
+                menuIconBars: menuIcon.classList.contains('fa-bars'),
+                menuIconTimes: menuIcon.classList.contains('fa-times')
+            });
         });
-    });
+    
+        // 点击导航链接时关闭菜单
+        const mobileLinks = navLinks.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.remove('active');
+                navLinks.classList.remove('show');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+    };
+
+    // 在 DOMContentLoaded 事件中调用初始化函数
+    initMobileMenu();
 });

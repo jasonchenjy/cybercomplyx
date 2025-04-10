@@ -3,6 +3,20 @@
     /* 移除 padding-top，因为已经由 page-title 提供了适当的间距 */
 }
 
+.page-title {
+    padding: 30px 0;
+    margin-top: 60px;
+    background: var(--light-bg);
+    border-bottom: 1px solid #eee;
+}
+
+.page-title h1 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin: 0;
+    text-align: center;
+}
+
 .process-intro {
     text-align: center;
     margin-bottom: 60px;

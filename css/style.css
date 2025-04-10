@@ -51,8 +51,27 @@ body {
 }
 
 .logo {
-    position: absolute; /* 将 logo 定位到左侧 */
-    left: 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 0;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.logo img {
+    height: 150px;
+    width: auto;
+    margin-right: 10px;
+    margin-top: 0;
+    vertical-align: middle;
 }
 
 .menu-toggle {
@@ -95,41 +114,53 @@ body {
 
     .menu-toggle {
         display: block;
-        position: static;
+        position: absolute;
+        right: 20px;
         cursor: pointer;
         font-size: 1.5rem;
+        z-index: 1001;
     }
 
     .nav-links {
         display: none;
-        width: 100%;
-        position: absolute;
-        top: 70px;
-        left: 0;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
         background-color: #fff;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        padding: 20px 0;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+        padding: 80px 20px 20px;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
+        z-index: 1000;
     }
 
     .nav-links.active {
         display: flex;
+        right: 0;
     }
 
     .nav-links li {
         width: 100%;
-        text-align: center;
-        margin: 10px 0;
+        margin: 15px 0;
     }
 
     .nav-links a {
         display: block;
         width: 100%;
-        padding: 10px 20px;
+        padding: 10px 15px;
+        font-size: 1.1rem;
+    }
+
+    .logo img {
+        height: 80px;
+        margin-top: -5px;
     }
 }
 
+/* 删除或注释掉第二个重复的 logo 样式定义 (大约在第 100 行左右) */
+/* 
 .logo {
     display: flex;
     align-items: center;
@@ -147,6 +178,7 @@ body {
     margin-right: 20px;
     margin-top: -45px;
 }
+*/
 
 .nav-links {
     display: flex;
@@ -401,92 +433,33 @@ footer {
 }
 
 /* 响应式调整 */
-@media (max-width: 768px) {
-    .navbar {
-        height: 70px;
-    }
-
-    .logo img {
-        height: 80px;
-        margin-top: -5px;
-    }
-
-    .menu-toggle {
-        display: none;
-        cursor: pointer;
-        font-size: 1.5rem;
-    }
-
-    /* 响应式布局 */
-    @media screen and (max-width: 768px) {
-        .menu-toggle {
-            display: block;
-        }
-    
-        .nav-links {
-            display: none;
-            width: 100%;
-            position: absolute;
-            top: 70px;
-            left: 0;
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            padding: 20px 0;
-        }
-    
-        .nav-links.active {
-            display: block;
-        }
-    
-        .nav-links li {
-            display: block;
-            margin: 15px 0;
-            text-align: center;
-        }
-    }
-
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        right: 0;
-        background: white;
-        flex-direction: column;
-        padding: 1rem 0;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.5rem;
-    }
-
-    .hero-features {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .footer-links {
-        grid-template-columns: 1fr;
-    }
-
-    .partner-logos {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
+/* 通用样式 */
+.navbar {
+    position: relative;
+    background: white;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .nav-links,
+  .mobile-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
 
 .page-title {
     padding-top: 100px;  /* 增加上边距，避免被导航栏遮挡 */
@@ -502,4 +475,91 @@ footer {
 .page-title .subtitle {
     color: #666;
     font-size: 1.1em;
+}
+
+/* 移动导航样式 */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+.mobile-nav.active {
+    display: block;
+}
+
+/* 移动导航中的链接样式 */
+.mobile-nav .mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    list-style: none;
+}
+
+.mobile-nav .mobile-nav-links li {
+    margin: 10px 0;
+}
+
+.mobile-nav .mobile-nav-links a {
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    color: var(--text-color);
+    text-decoration: none;
+    position: relative;
+    display: block;
+}
+
+.mobile-nav .mobile-nav-links a:hover {
+    color: var(--secondary-color);
+    background: rgba(52, 152, 219, 0.1);
+}
+
+.mobile-nav .mobile-nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--secondary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.mobile-nav .mobile-nav-links a:hover::after {
+    width: 100%;
+}
+
+.mobile-nav .mobile-nav-links a.active {
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.mobile-nav .mobile-nav-links a.active::after {
+    width: 100%;
+}
+
+.mobile-nav .mobile-nav-links a:hover {
+    color: var(--secondary-color);
+    background: rgba(52, 152, 219, 0.1);
+}
+
+/* 媒体查询：在移动设备上显示菜单按钮，隐藏桌面导航 */
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+    
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
 }

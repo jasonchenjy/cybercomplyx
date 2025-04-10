@@ -8,12 +8,17 @@
     <link rel="stylesheet" href="../css/contact.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="../js/contact.js"></script>
+    <script src="../js/main.js"></script>
     <script src="../js/language-switch.js"></script>
 </head>
 <body>
     <nav class="navbar">
         <div class="container">
-            <div class="logo">CyberComply</div>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="../images/logo.png" alt="CyberComply Logo">
+                </a>
+            </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
@@ -23,11 +28,25 @@
                 <li><a href="contact.html" class="active">Contact</a></li>
                 <li><a href="../contact.html" class="language-switch">中文</a></li>
             </ul>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
+            <!-- 移动端菜单按钮 -->
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars" id="menu-icon"></i>
             </div>
         </div>
     </nav>
+
+    <!-- 移动端导航菜单 - 将其移到导航栏外部 -->
+    <div class="mobile-nav" id="mobile-nav">
+        <ul class="mobile-nav-links" id="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="process.html">Process</a></li>
+            <li><a href="assessment.html">Free Assessment</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html"  class="active">Contact</a></li>
+            <li><a href="../contact.html" class="language-switch">中文</a></li>
+        </ul>
+    </div>
 
     <div class="page-title">
         <div class="container">

@@ -37,22 +37,26 @@ document.addEventListener('DOMContentLoaded', function() {
         try {
             // 这里添加表单数据提交到后端的逻辑
             const formData = new FormData(form);
-            const response = await fetch('/api/assessment', {
+            const response = await fetch('https://formsubmit.co/jasonchenjy@gmail.com', {
                 method: 'POST',
-                body: formData
+                body: formData,
+                headers: {
+                    "Accept": "application/json"
+                }
             });
 
             if (response.ok) {
                 // 发送自动回复邮件
-                await sendAutoReply(formData.get('email'));
+                // await sendAutoReply(formData.get('email'));
                 
                 // 跳转到感谢页面
-                window.location.href = '/assessment-thanks.html';
+                alert("提交成功！我们将尽快联系您。");
             } else {
-                throw new Error('提交失败');
+                alert("提交失败，请稍后再试。");
             }
         } catch (error) {
             alert('抱歉，提交失败，请稍后重试或直接联系我们。');
+        } finally {
             submitBtn.disabled = false;
             submitBtn.textContent = '提交评估';
         }
