@@ -1,0 +1,165 @@
+/* 评估页面布局 */
+.assessment-page {
+    padding-top: 120px;
+    min-height: 100vh;
+    background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
+                url('../images/assessment-bg.jpg') center/cover;
+    display: flex;           /* 添加 flex 布局 */
+    align-items: center;     /* 垂直居中 */
+}
+
+.assessment-page .container {
+    width: 100%;            /* 确保容器占满宽度 */
+    padding: 40px 20px;     /* 增加上下内边距 */
+}
+
+/* 表单容器样式 */
+.assessment-form-container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+/* 评估页面标题样式 */
+.assessment-page .section-title {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.assessment-page .section-description {
+    text-align: center;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .assessment-page .section-title {
+        font-size: 2rem;
+    }
+    
+    .assessment-page .section-description {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .assessment-page {
+        padding-top: 90px;
+        align-items: flex-start;  /* 移动端靠上对齐 */
+    }
+
+    .assessment-page .container {
+        padding: 20px;
+    }
+}
+
+/* 表单行样式 */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+/* 表单组样式 */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+    outline: none;
+}
+
+/* 复选框组样式 */
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;  /* 减小间距 */
+    margin-top: 4px;  /* 减小顶部间距 */
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    padding: 6px 10px;  /* 减小内边距 */
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    background: #f8f9fa;
+    font-size: 14px;  /* 稍微减小字体 */
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 16px;  /* 稍微减小复选框大小 */
+    height: 16px;
+    margin-right: 8px;  /* 减小右侧间距 */
+    accent-color: var(--secondary-color);
+}
+
+.checkbox-text {
+    font-size: 14px;
+    color: var(--text-color);
+    line-height: 1.2;  /* 减小行高 */
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .checkbox-group {
+        grid-template-columns: repeat(2, 1fr);  /* 保持两列布局 */
+        gap: 6px;  /* 移动端更紧凑 */
+    }
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .assessment-page {
+        padding-top: 90px;
+    }
+
+    .assessment-form-container {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .checkbox-group {
+        grid-template-columns: 1fr;
+    }
+}

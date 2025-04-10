@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>服务介绍 - CyberComply</title>
+    <title>服务 - CyberComply</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/service.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="js/language-switch.js"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -18,7 +20,7 @@
                 <li><a href="assessment.html">免费评估</a></li>
                 <li><a href="about.html">关于我们</a></li>
                 <li><a href="contact.html">联系我们</a></li>
-                <li><a href="#" class="language-switch">EN</a></li>
+                <li><a href="en/services.html" class="language-switch">EN</a></li>
             </ul>
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
@@ -26,96 +28,193 @@
         </div>
     </nav>
 
+    <!-- 服务介绍区域 -->
+    <div class="service-intro">
+        <div class="container">
+            <h1>ComplyX 专注为中小企业提供高效、实用的合规咨询服务</h1>
+            <p class="subtitle">协助顺利通过主流审计</p>
+            <p class="service-stats">已为 50+ 家客户完成 SOC 2 / ISO 27001 / HIPAA 等认证流程</p>
+        </div>
+    </div>
+
     <!-- 服务类别导航 -->
     <nav class="service-navbar">
         <div class="container">
             <ul class="service-nav-links">
-                <li><a href="#compliance" class="active">合规认证</a></li>
-                <li><a href="#assessment">评估服务</a></li>
-                <li><a href="#implementation">实施服务</a></li>
-                <li><a href="#audit">审计支持</a></li>
+                <li><a href="#certification" class="active">安全合规认证支持</a></li>
+                <li><a href="#assessment">准备评估</a></li>
+                <li><a href="#control">控制设计与审计协助</a></li>
             </ul>
         </div>
     </nav>
 
     <section id="services" class="services-page">
         <div class="container">
-            <h1 class="section-title">我们的服务</h1>
-            
-            <!-- 服务类别导航 -->
-            <div class="service-tabs">
-                <a href="#compliance" class="tab-link active">合规认证</a>
-                <a href="#assessment" class="tab-link">评估服务</a>
-                <a href="#implementation" class="tab-link">实施服务</a>
-                <a href="#audit" class="tab-link">审计支持</a>
-            </div>
-
-            <!-- 合规认证服务 -->
-            <div id="compliance" class="service-section active">
-                <h2>合规认证服务</h2>
+            <!-- 安全合规认证支持 -->
+            <div id="certification" class="service-section active">
+                <h2>安全合规认证支持</h2>
                 <div class="service-grid">
                     <div class="service-card">
                         <i class="fas fa-shield-alt"></i>
-                        <h3>SOC 认证</h3>
-                        <ul>
-                            <li>SOC 1 Type I/II</li>
-                            <li>SOC 2 Type I/II</li>
-                            <li>SOC 3 认证</li>
+                        <h3>SOC 认证服务</h3>
+                        <ul class="service-features">
+                            <li>SOC 1 Type I/II 认证</li>
+                            <li>SOC 2 Type I/II 认证</li>
+                            <li>SOC 3 认证支持</li>
+                            <li>定制化控制框架</li>
                         </ul>
                     </div>
 
                     <div class="service-card">
                         <i class="fas fa-lock"></i>
                         <h3>ISO 27001</h3>
-                        <ul>
-                            <li>差距评估</li>
-                            <li>体系建设</li>
-                            <li>认证支持</li>
+                        <ul class="service-features">
+                            <li>信息安全管理体系建设</li>
+                            <li>风险评估与处理</li>
+                            <li>控制措施实施指导</li>
+                            <li>认证全程支持</li>
                         </ul>
                     </div>
 
                     <div class="service-card">
                         <i class="fas fa-credit-card"></i>
                         <h3>PCI-DSS</h3>
-                        <ul>
-                            <li>合规评估</li>
-                            <li>安全加固</li>
-                            <li>认证辅导</li>
+                        <ul class="service-features">
+                            <li>支付卡行业标准咨询</li>
+                            <li>安全要求实施指导</li>
+                            <li>漏洞扫描与修复</li>
+                            <li>合规性评估支持</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <i class="fas fa-hospital"></i>
+                        <h3>HIPAA / HITRUST</h3>
+                        <ul class="service-features">
+                            <li>医疗健康数据保护</li>
+                            <li>隐私合规评估</li>
+                            <li>安全控制实施</li>
+                            <li>持续合规监控</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <!-- 评估服务 -->
+            <!-- 准备评估服务 -->
             <div id="assessment" class="service-section">
-                <h2>评估服务</h2>
+                <h2>准备评估</h2>
                 <div class="service-grid">
-                    <!-- 评估服务内容 -->
+                    <div class="service-card">
+                        <i class="fas fa-search"></i>
+                        <h3>当前状态评估</h3>
+                        <ul class="service-features">
+                            <li>现有控制措施评估</li>
+                            <li>安全成熟度评估</li>
+                            <li>合规状况盘点</li>
+                            <li>风险现状分析</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <i class="fas fa-chart-bar"></i>
+                        <h3>差距分析</h3>
+                        <ul class="service-features">
+                            <li>控制要求对比分析</li>
+                            <li>差距清单制定</li>
+                            <li>改进建议提供</li>
+                            <li>优先级排序</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <i class="fas fa-map"></i>
+                        <h3>合规路线图规划</h3>
+                        <ul class="service-features">
+                            <li>实施计划制定</li>
+                            <li>资源需求评估</li>
+                            <li>时间节点规划</li>
+                            <li>里程碑设定</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
-            <!-- 实施服务 -->
-            <div id="implementation" class="service-section">
-                <h2>实施服务</h2>
+            <!-- 控制设计与审计协助 -->
+            <div id="control" class="service-section">
+                <h2>控制设计与审计协助</h2>
                 <div class="service-grid">
-                    <!-- 实施服务内容 -->
-                </div>
-            </div>
+                    <div class="service-card">
+                        <i class="fas fa-users-cog"></i>
+                        <h3>业务流程协作</h3>
+                        <ul class="service-features">
+                            <li>业务流程梳理</li>
+                            <li>跨部门协作机制</li>
+                            <li>职责界定与分配</li>
+                            <li>流程优化建议</li>
+                        </ul>
+                    </div>
 
-            <!-- 审计支持 -->
-            <div id="audit" class="service-section">
-                <h2>审计支持</h2>
-                <div class="service-grid">
-                    <!-- 审计支持内容 -->
+                    <div class="service-card">
+                        <i class="fas fa-tasks"></i>
+                        <h3>控制措施建议</h3>
+                        <ul class="service-features">
+                            <li>技术控制建议</li>
+                            <li>管理控制建议</li>
+                            <li>最佳实践分享</li>
+                            <li>实施指导支持</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <i class="fas fa-handshake"></i>
+                        <h3>审计沟通协调</h3>
+                        <ul class="service-features">
+                            <li>审计机构对接</li>
+                            <li>审计范围确定</li>
+                            <li>时间计划协调</li>
+                            <li>问题沟通处理</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- 移除多余的闭合标签 -->
+    </section>
+
     <footer>
-        <!-- 与 index.html 相同的页脚内容 -->
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>CyberComply</h3>
+                    <p>专业的安全合规咨询服务</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>快速链接</h4>
+                        <ul>
+                            <li><a href="index.html">首页</a></li>
+                            <li><a href="services.html">服务</a></li>
+                            <li><a href="process.html">流程</a></li>
+                            <li><a href="about.html">关于我们</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>联系我们</h4>
+                        <ul>
+                            <li><i class="fas fa-envelope"></i> contact@cybercomply.com</li>
+                            <li><i class="fas fa-phone"></i> +86 123 4567 8900</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CyberComply. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="js/services.js"></script>
 </body>
 </html>

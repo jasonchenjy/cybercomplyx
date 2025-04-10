@@ -76,23 +76,33 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // 评估页面导航切换
+    // 服务导航切换
     document.addEventListener('DOMContentLoaded', function() {
-        const assessmentLinks = document.querySelectorAll('.service-nav-links a');
-        const assessmentSections = document.querySelectorAll('.assessment-section');
+        const serviceLinks = document.querySelectorAll('.service-nav-links a');
+        const serviceSections = document.querySelectorAll('.service-section');
     
-        assessmentLinks.forEach(link => {
+        serviceLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 
                 // 移除所有活动状态
-                assessmentLinks.forEach(l => l.classList.remove('active'));
-                assessmentSections.forEach(section => section.classList.remove('active'));
+                serviceLinks.forEach(l => l.classList.remove('active'));
+                serviceSections.forEach(s => s.classList.remove('active'));
                 
                 // 添加新的活动状态
                 link.classList.add('active');
                 const targetId = link.getAttribute('href').substring(1);
                 document.getElementById(targetId).classList.add('active');
             });
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+    
+        menuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
         });
     });
 });

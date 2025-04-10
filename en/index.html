@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberComply - Making Compliance Easy</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">CyberComply</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="process.html">Process</a></li>
+                <li><a href="assessment.html">Free Assessment</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="../index.html" class="language-switch">中文</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1 class="hero-title">Making Compliance Easy</h1>
+            <h2 class="hero-subtitle">Easy SOC 2 / ISO 27001 Certification for SMEs</h2>
+            <p class="hero-description">Deep understanding of industry standards, providing high-pass-rate compliance solutions</p>
+            
+            <ul class="hero-features">
+                <li><i class="fas fa-shield-alt"></i> Focused on Security Compliance Consulting</li>
+                <li><i class="fas fa-book"></i> In-depth Knowledge of Industry Standards and Audit Requirements</li>
+                <li><i class="fas fa-chart-line"></i> High Pass Rate + Authorized Audit Partnership</li>
+            </ul>
+            
+            <div class="cta-buttons">
+                <a href="assessment.html" class="btn primary">Free Assessment</a>
+                <a href="process.html" class="btn secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../js/main.js"></script>
+    <script>
+        fetch('../includes/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

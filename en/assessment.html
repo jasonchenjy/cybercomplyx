@@ -1,25 +1,27 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>免费评估 - CyberComply</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/assessment.css">
+    <title>Free Assessment - CyberComply</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/assessment.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../js/assessment.js"></script>
+    <script src="../js/language-switch.js"></script>
 </head>
 <body>
     <nav class="navbar">
         <div class="container">
             <div class="logo">CyberComply</div>
             <ul class="nav-links">
-                <li><a href="index.html">首页</a></li>
-                <li><a href="services.html">服务</a></li>
-                <li><a href="process.html">流程</a></li>
-                <li><a href="assessment.html" class="active">免费评估</a></li>
-                <li><a href="about.html">关于我们</a></li>
-                <li><a href="contact.html">联系我们</a></li>
-                <li><a href="#" class="language-switch">EN</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="process.html">Process</a></li>
+                <li><a href="assessment.html" class="active">Free Assessment</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="../assessment.html" class="language-switch">中文</a></li>
             </ul>
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
@@ -27,52 +29,58 @@
         </div>
     </nav>
 
+    <div class="page-title">
+        <div class="container">
+            <h1>Free Compliance Assessment</h1>
+        </div>
+    </div>
+
     <section class="assessment-page">
         <div class="container">
-            <h1 class="section-title">免费合规评估</h1>
-            <p class="section-description">2分钟完成填写，获取专业的合规建议</p>
+            <h1 class="section-title">Free Compliance Assessment</h1>
+            <p class="section-description">Complete in 2 minutes for professional compliance advice</p>
 
             <div class="assessment-form-container">
                 <form id="assessmentForm" class="assessment-form">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="companyName">公司名称 *</label>
+                            <label for="companyName">Company Name *</label>
                             <input type="text" id="companyName" name="companyName" required>
                         </div>
                         <div class="form-group">
-                            <label for="industry">所在行业 *</label>
+                            <label for="industry">Industry *</label>
                             <select id="industry" name="industry" required>
-                                <option value="">请选择行业</option>
-                                <option value="tech">科技</option>
-                                <option value="medical">医疗</option>
-                                <option value="ecommerce">电商</option>
+                                <option value="">Please select</option>
+                                <option value="tech">Technology</option>
+                                <option value="medical">Healthcare</option>
+                                <option value="ecommerce">E-commerce</option>
                                 <option value="saas">SaaS</option>
-                                <option value="education">教育</option>
-                                <option value="other">其他</option>
+                                <option value="education">Education</option>
+                                <option value="other">Other</option>
                             </select>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="companySize">公司规模 *</label>
+                            <label for="companySize">Company Size *</label>
                             <select id="companySize" name="companySize" required>
-                                <option value="">请选择规模</option>
-                                <option value="1-10">1-10人</option>
-                                <option value="11-50">11-50人</option>
-                                <option value="51-200">51-200人</option>
-                                <option value="200+">200+人</option>
+                                <option value="">Please select</option>
+                                <option value="1-10">1-10 employees</option>
+                                <option value="11-50">11-50 employees</option>
+                                <option value="51-200">51-200 employees</option>
+                                <option value="200+">200+ employees</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="email">邮箱 *</label>
+                            <label for="email">Email *</label>
                             <input type="email" id="email" name="email" required>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label>已有的认证</label>
+                            <label>Current Certifications</label>
                             <div class="checkbox-group">
                                 <label class="checkbox-label">
                                     <input type="checkbox" name="currentCert[]" value="soc2">
@@ -88,12 +96,12 @@
                                 </label>
                                 <label class="checkbox-label">
                                     <input type="checkbox" name="currentCert[]" value="none">
-                                    <span class="checkbox-text">无认证</span>
+                                    <span class="checkbox-text">None</span>
                                 </label>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label>目标认证 *</label>
+                            <label>Target Certifications *</label>
                             <div class="checkbox-group">
                                 <label class="checkbox-label">
                                     <input type="checkbox" name="targetCert[]" value="soc2" required>
@@ -113,36 +121,36 @@
                                 </label>
                                 <label class="checkbox-label">
                                     <input type="checkbox" name="targetCert[]" value="unsure">
-                                    <span class="checkbox-text">不确定</span>
+                                    <span class="checkbox-text">Not Sure</span>
                                 </label>
                             </div>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="background">合规背景说明</label>
-                        <textarea id="background" name="background" rows="3" placeholder="请简要描述您的合规需求和背景"></textarea>
+                        <label for="background">Compliance Background</label>
+                        <textarea id="background" name="background" rows="3" placeholder="Please briefly describe your compliance needs and background"></textarea>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="phone">电话（选填）</label>
+                            <label for="phone">Phone (Optional)</label>
                             <input type="tel" id="phone" name="phone">
                         </div>
                         <div class="form-group">
-                            <label for="needCall">是否需要电话沟通？</label>
+                            <label for="needCall">Need Phone Consultation?</label>
                             <select id="needCall" name="needCall">
-                                <option value="no">否</option>
-                                <option value="yes">是</option>
+                                <option value="no">No</option>
+                                <option value="yes">Yes</option>
                             </select>
                         </div>
                     </div>
 
                     <div class="privacy-notice">
-                        <p><i class="fas fa-shield-alt"></i> 我们承诺不会分享您的信息，评估结果仅用于内部分析。</p>
+                        <p><i class="fas fa-shield-alt"></i> We promise not to share your information. Assessment results are for internal analysis only.</p>
                     </div>
 
-                    <button type="submit" class="btn primary">提交评估</button>
+                    <button type="submit" class="btn primary">Submit Assessment</button>
                 </form>
             </div>
         </div>
@@ -153,20 +161,20 @@
             <div class="footer-content">
                 <div class="footer-logo">
                     <h3>CyberComply</h3>
-                    <p>专业的安全合规咨询服务</p>
+                    <p>Professional Compliance Consulting Services</p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-section">
-                        <h4>快速链接</h4>
+                        <h4>Quick Links</h4>
                         <ul>
-                            <li><a href="index.html">首页</a></li>
-                            <li><a href="services.html">服务</a></li>
-                            <li><a href="process.html">流程</a></li>
-                            <li><a href="about.html">关于我们</a></li>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="process.html">Process</a></li>
+                            <li><a href="about.html">About Us</a></li>
                         </ul>
                     </div>
                     <div class="footer-section">
-                        <h4>联系我们</h4>
+                        <h4>Contact Us</h4>
                         <ul>
                             <li><i class="fas fa-envelope"></i> contact@cybercomply.com</li>
                             <li><i class="fas fa-phone"></i> +86 123 4567 8900</li>
@@ -179,7 +187,5 @@
             </div>
         </div>
     </footer>
-
-    <script src="js/assessment.js"></script>
 </body>
 </html>
