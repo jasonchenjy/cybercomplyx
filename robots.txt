@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /js/
+Disallow: /css/
+
+# 允许搜索引擎访问图片，有助于图片搜索
+Allow: /images/
+
+Sitemap: https://cybercomplyx.com/sitemap.xml
