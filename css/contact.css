@@ -72,6 +72,24 @@
     color: #666;
 }
 
+/* 微信二维码样式 */
+.wechat-qr {
+    margin-top: 30px;
+}
+
+.qr-code {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.qr-code img {
+    max-width: 200px;
+    border: 1px solid #eee;
+    padding: 10px;
+    background: white;
+    border-radius: 4px;
+}
+
 /* 联系表单样式 */
 .contact-form-container {
     background: white;
