@@ -2,7 +2,6 @@
 .service-navbar {
     background: var(--light-bg);
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    position: sticky;
     top: 90px;
     z-index: 999;
 }

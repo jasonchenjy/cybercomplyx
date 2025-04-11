@@ -563,3 +563,38 @@ footer {
         cursor: pointer;
     }
 }
+
+/* 移动端 Footer 响应式调整 */
+@media screen and (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .footer-links {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .footer-logo {
+        text-align: center;
+    }
+    
+    .footer-section {
+        margin-bottom: 1.5rem;
+    }
+    
+    .footer-section h4 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .footer-section ul li {
+        margin-bottom: 0.6rem;
+    }
+    
+    .footer-bottom {
+        padding-top: 15px;
+        font-size: 0.9rem;
+    }
+}

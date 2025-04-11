@@ -65,15 +65,39 @@
         </div>
     </section>
 
-    <div id="footer-placeholder"></div>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>ComplyX</h3>
+                    <p>Professional Compliance Consulting Services</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="process.html">Process</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><i class="fas fa-envelope"></i> contact@cybercomplyx.com</li>
+                            <li><i class="fas fa-phone"></i> +1 (408) 359-7326</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ComplyX. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="../js/main.js"></script>
-    <script>
-        fetch('../includes/footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
-            });
-    </script>
+    
 </body>
 </html>
